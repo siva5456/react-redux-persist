@@ -8,7 +8,6 @@ const Reducer = createSlice({
     initialState,
     reducers: {
         AddItemToCart(state, action) {
-            // console.log(action.payload);
             if (state.length == 0) {
                 state.push({ Data: action.payload, quantity: 1 });
                 // console.log("0");

@@ -47,17 +47,16 @@ function Products({ navigation }) {
   }, []);
 
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <View style={{ flex: 1, backgroundColor:theme? '#000000': "#e4e7ed" }}>
+    <View style={{ flex: 1, backgroundColor:theme? "#28282B":'#fff'}}>
+        <SafeAreaView style={styles.safeArea}>
         <View
           style={{
-            flex: 0.1,
+            height:55,
             alignItems: "center",
             justifyContent: "space-between",
             flexDirection: "row",
             backgroundColor:theme? '#28282B': "#fff" ,
             paddingHorizontal: 1,
-            marginBottom: 10,
           }}
         >
           <View
@@ -74,8 +73,8 @@ function Products({ navigation }) {
                 alignItems: "center",
                 justifyContent: "center",
                 backgroundColor: theme? '#28282B': "#fff" ,
-                height: 50,
-                width: 50,
+                height: 45,
+                width: 45,
                 borderRadius: 50,
               }}
             >
@@ -90,8 +89,8 @@ function Products({ navigation }) {
               alignItems: "center",
               justifyContent: "center",
               backgroundColor:theme? 'grey': "rgb(220, 236, 249)" ,
-              height: 50,
-              width: 50,
+              height: 45,
+              width: 45,
               borderRadius: 50,
               margin: 10,
             }}
@@ -102,11 +101,12 @@ function Products({ navigation }) {
 
         <View
           style={{
-            flex: 0.9,
+            flex: 1,
             alignItems: "center",
             justifyContent: "space-between",
             flexDirection: "row",
-            backgroundColor:theme? 'rgba(0, 0, 0, 0.144)': "#e4e7ed"
+            backgroundColor:theme? '#000000': "#e4e7ed",
+            paddingTop:10,
           }}
         >
           {myProducts && (
@@ -161,8 +161,8 @@ function Products({ navigation }) {
             />
           )}
         </View>
-      </View>
     </SafeAreaView>
+      </View>
   );
 }
 
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
   safeArea: {
     marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     flex: 1,
-    backgroundColor: "aliceblue",
+    backgroundColor: "transparent",
   },
 });
 

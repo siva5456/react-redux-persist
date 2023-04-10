@@ -1,14 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet,} from 'react-native';
+import { Provider } from "react-redux";
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
 import Main from './src/components/Main';
+import { myStore } from './src/redux/store/store';
 
 
-
+let persistor = persistStore(myStore);
 
 export default function App() {
   return (
     <>
-      <Main/>
+      <Provider store={myStore}>
+        <PersistGate loading={null} persistor={persistor}>
+          <Main />
+        </PersistGate>
+      </Provider>
     </>
 
   );
