@@ -157,19 +157,27 @@ function Cart() {
                           onPress={() => dispatch(RemoveItemFromCart(index))}
                           style={{
                             height: 43,
-                            backgroundColor: "crimson",
+                            backgroundColor: "transparent",
                             alignItems: "center",
                             width: 50,
                             alignItems: "center",
                             justifyContent: "center",
                             borderRadius: 8,
-                            marginBottom: 2,
+                            borderWidth: 1,
+                            borderColor: "#F10404",
                           }}
                         >
-                          <Image
+                          {/* <Image
                             source={{
                               uri: "https://img.icons8.com/windows/256/delete.png",
                             }}
+                            style={{
+                              height: 30,
+                              width: 30,
+                            }}
+                          /> */}
+                          <Image
+                            source={require("../../assets/trashBin.png")}
                             style={{
                               height: 30,
                               width: 30,
@@ -187,7 +195,8 @@ function Cart() {
                             alignItems: "center",
                             justifyContent: "center",
                             borderRadius: 8,
-                            marginBottom: 2,
+                            borderWidth: 1,
+                            borderColor: "rgb(4, 169, 234)",
                           }}
                         >
                           <Text
@@ -211,7 +220,8 @@ function Cart() {
                           alignItems: "center",
                           justifyContent: "center",
                           borderRadius: 8,
-                          marginBottom: 2,
+                          borderWidth: 1,
+                          borderColor: theme ? "#000000" : "#e4e7ed",
                         }}
                       >
                         <Text
@@ -233,7 +243,8 @@ function Cart() {
                           alignItems: "center",
                           justifyContent: "center",
                           borderRadius: 8,
-                          marginBottom: 2,
+                          borderWidth: 1,
+                          borderColor: "rgb(4, 169, 234)",
                         }}
                       >
                         <Text
