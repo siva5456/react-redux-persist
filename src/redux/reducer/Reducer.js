@@ -17,7 +17,7 @@ const Reducer = createSlice({
                 const boolean = state?.some((product) => {
                     return product.Data.id === action.payload.id;
                 });
-                console.log(boolean);
+                // console.log(boolean);
                 if (boolean) {
                     state?.map((product) => {
                         if (product.Data.id === action.payload.id) {

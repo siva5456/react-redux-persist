@@ -112,7 +112,7 @@ function Cart() {
                       <Text
                         style={{ color: theme ? "#fff" : "#000", fontSize: 23 }}
                       >
-                        Price: ${Math.floor(item.Data.price)}
+                        Price: ${Math.floor(item.Data.price)}.00
                       </Text>
                     </View>
                     <Text
@@ -266,7 +266,7 @@ function Cart() {
                   margin: 5,
                 }}
               >
-                Total Cost: ${Math.floor(totalCost)}
+                Total Cost: ${Math.floor(totalCost)}.00
               </Text>
 
               <Pressable

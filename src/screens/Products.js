@@ -142,7 +142,7 @@ function Products({ navigation }) {
                       />
 
                       <Text style={{ color:theme? '#fff': "black", fontSize: 23 }}>
-                        Price: ${Math.floor(item.price)}
+                        Price: ${Math.floor(item.price)}.00
                       </Text>
                     </View>
                     <Text
