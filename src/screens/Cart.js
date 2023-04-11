@@ -19,7 +19,7 @@ import {
 const screenDimensions = Dimensions.get("screen");
 // console.log(screenDimensions);
 
-function Cart() {
+function Cart({navigation,hide}) {
   // let val=[]
   // let x=Boolean(val.length)
   // let y=Boolean(val)
@@ -49,11 +49,7 @@ function Cart() {
       setTotalCost(Math.floor(cost));
     }
   }, [cartItems]);
-  let handleMyBooking = () => {
-    alert(
-      `your items are booked today ${new Date().toLocaleDateString()}.will be delevered within 3 working days`
-    );
-  };
+ 
 
   return (
     <>
@@ -80,6 +76,7 @@ function Cart() {
             }}
           >
             <FlatList
+            showsVerticalScrollIndicator={false}
               data={myProducts}
               renderItem={({ item, index }) => {
                 return (
@@ -181,6 +178,7 @@ function Cart() {
                             style={{
                               height: 30,
                               width: 30,
+                              tintColor:'#F10404'
                             }}
                           />
                         </Pressable>
@@ -272,16 +270,25 @@ function Cart() {
             >
               <Text
                 style={{
-                  color: theme ? "#fff" : "#000",
-                  fontSize: 20,
+                  color: theme ? "grey" : "grey",
+                  fontSize: 16,
+                  margin: 5,
+                }}
+              >
+                {`(items ${cartItems.length})`}
+              </Text>
+              <Text
+                style={{
+                  color: theme ? "grey" : "grey",
+                  fontSize:18,
                   margin: 5,
                 }}
               >
                 Total Cost: ${Math.floor(totalCost)}.00
               </Text>
 
-              <Pressable
-                onPress={handleMyBooking}
+              {!hide &&<Pressable
+                onPress={()=>navigation.navigate('BookOrder')}
                 style={{
                   height: 43,
                   backgroundColor: "rgb(4, 169, 234)",
@@ -298,7 +305,7 @@ function Cart() {
                 >
                   Order
                 </Text>
-              </Pressable>
+              </Pressable>}
             </View>
           </View>
         )}

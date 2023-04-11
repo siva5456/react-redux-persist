@@ -68,7 +68,7 @@ function Products({ navigation }) {
             }}
           >
             <TouchableOpacity
-              onPress={() => navigation.navigate("Cart")}
+              onPress={() => navigation.navigate('Cart')}
               style={{
                 alignItems: "center",
                 justifyContent: "center",
